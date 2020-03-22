@@ -10,4 +10,5 @@ User
 
 ## Technologies
 Frontend: Vue or React
+
 Backend: Java Spring
