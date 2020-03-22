@@ -1,1 +1,10 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task_helper
+    username: app_user
+    password: pwd
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog-master.yaml
+    liquibase-schema: public

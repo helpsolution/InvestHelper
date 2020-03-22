@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: Init db
+      author: Fedor
+      changes:
+        - sqlFile:
+            path: db/migrations/001-init.sql
