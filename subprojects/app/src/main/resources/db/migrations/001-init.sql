@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS  task_helper.user
     last_name     VARCHAR(45)  NOT NULL,
     created_at    TIMESTAMP    NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT email_uidx UNIQUE (email_address),
+    CONSTRAINT email_uidx UNIQUE (email),
     CONSTRAINT username_uidx UNIQUE (username)
 );
 
