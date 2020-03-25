@@ -1,0 +1,37 @@
+package com.taskhelper.app.domain.service;
+
+import com.taskhelper.app.domain.commands.RegistrationCommand;
+import com.taskhelper.app.domain.common.mail.MailManager;
+import com.taskhelper.app.domain.model.User;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+
+@Service
+@RequiredArgsConstructor
+public class DefaultUserService implements UserService {
+
+    private final RegistrationManager registrationManager;
+    private final MailManager mailManager;
+
+    @Override
+    public void register(RegistrationCommand command) {
+        Assert.notNull(command, "'command' must not be null");
+
+        User registeredUser = registrationManager.register(
+                command.getUsername(),
+                command.getPassword(),
+                command.getPassword());
+
+        sendWelcomeMessage(registeredUser);
+    }
+
+    private void sendWelcomeMessage(User user) {
+        Assert.notNull(user, "'user' must not be null");
+
+        mailManager.send(
+                user.getEmail(),
+                "Welcome to TaskHelper",
+                String.format("Hello, %s", user.getUsername()));
+    }
+}
