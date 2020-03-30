@@ -1,4 +1,4 @@
-package com.taskhelper.app.domain.common.mail;
+package com.investhelper.app.domain.common.mail;
 
 public interface MailManager {
     /**

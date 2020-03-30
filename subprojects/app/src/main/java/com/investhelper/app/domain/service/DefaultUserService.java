@@ -1,8 +1,8 @@
-package com.taskhelper.app.domain.service;
+package com.investhelper.app.domain.service;
 
-import com.taskhelper.app.domain.commands.RegistrationCommand;
-import com.taskhelper.app.domain.common.mail.MailManager;
-import com.taskhelper.app.domain.model.User;
+import com.investhelper.app.domain.commands.RegistrationCommand;
+import com.investhelper.app.domain.common.mail.MailManager;
+import com.investhelper.app.domain.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;

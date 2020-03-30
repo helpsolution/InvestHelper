@@ -1,7 +1,7 @@
-DROP SCHEMA IF EXISTS task_helper CASCADE;
-CREATE SCHEMA task_helper;
+DROP SCHEMA IF EXISTS invest_helper CASCADE;
+CREATE SCHEMA invest_helper;
 
-CREATE TABLE IF NOT EXISTS  task_helper.user
+CREATE TABLE IF NOT EXISTS invest_helper.user
 (
     id            BIGSERIAL,
     email         VARCHAR(128) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS  task_helper.user
     CONSTRAINT username_uidx UNIQUE (username)
 );
 
-CREATE TABLE IF NOT EXISTS  task_helper.team
+CREATE TABLE IF NOT EXISTS invest_helper.potfolio
 (
     id           BIGSERIAL,
     name         VARCHAR(75) NOT NULL,
@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS  task_helper.team
     archived     BOOLEAN     NOT NULL DEFAULT FALSE,
     created_at   TIMESTAMP   NOT NULL,
     PRIMARY KEY (id),
-    CONSTRAINT fk_team_user_user_id
+    CONSTRAINT fk_portfolio_user_user_id
         FOREIGN KEY (user_id)
-            REFERENCES task_helper.user (id)
+            REFERENCES invest_helper.user (id)
             ON DELETE RESTRICT
             ON UPDATE NO ACTION
 );
-CREATE INDEX team_fk_user_id ON task_helper.team (user_id);
+CREATE INDEX potfolio_fk_user_id ON invest_helper.potfolio (user_id);

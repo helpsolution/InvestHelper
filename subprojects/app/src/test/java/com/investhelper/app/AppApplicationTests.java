@@ -1,4 +1,4 @@
-package com.taskhelper.app;
+package com.investhelper.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

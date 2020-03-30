@@ -1,4 +1,4 @@
-package com.taskhelper.app.domain.ex;
+package com.investhelper.app.domain.ex;
 
 public class UserExistsException extends RuntimeException {
 }

@@ -1,9 +1,9 @@
-package com.taskhelper.app.web.controller;
+package com.investhelper.app.web.controller;
 
-import com.taskhelper.app.domain.ex.EmailExistsException;
-import com.taskhelper.app.domain.ex.UserExistsException;
-import com.taskhelper.app.domain.service.UserService;
-import com.taskhelper.app.web.payload.RegistrationPayload;
+import com.investhelper.app.domain.ex.EmailExistsException;
+import com.investhelper.app.domain.ex.UserExistsException;
+import com.investhelper.app.domain.service.UserService;
+import com.investhelper.app.web.payload.RegistrationPayload;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,3 +1,3 @@
-echo "Starting task helper backend"
+echo "Starting invest helper backend"
 docker-compose up
 

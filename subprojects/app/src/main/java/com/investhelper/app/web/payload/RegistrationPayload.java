@@ -1,7 +1,7 @@
-package com.taskhelper.app.web.payload;
+package com.investhelper.app.web.payload;
 
 
-import com.taskhelper.app.domain.commands.RegistrationCommand;
+import com.investhelper.app.domain.commands.RegistrationCommand;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

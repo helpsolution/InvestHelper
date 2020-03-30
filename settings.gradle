@@ -1,6 +1,6 @@
 include 'app'
 
-rootProject.name = 'task-helper'
+rootProject.name = 'invest-helper'
 rootProject.children.each {project ->
     String fileBaseName = project.name.replaceAll("\\p{Upper}") { "-${it.toLowerCase()}" }
     String projectDirName = "subprojects/$fileBaseName"

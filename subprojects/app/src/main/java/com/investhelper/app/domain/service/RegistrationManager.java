@@ -1,6 +1,6 @@
-package com.taskhelper.app.domain.service;
+package com.investhelper.app.domain.service;
 
-import com.taskhelper.app.domain.model.User;
+import com.investhelper.app.domain.model.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 

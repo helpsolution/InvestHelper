@@ -1,4 +1,4 @@
-package com.taskhelper.app.domain.commands;
+package com.investhelper.app.domain.commands;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.taskhelper.app;
+package com.investhelper.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
