@@ -4,6 +4,12 @@ spring:
     username: app_user
     password: pwd
     driver-class-name: org.postgresql.Driver
+
+  jpa.properties.hibernate:
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    ddl-auto: none
+    show-sql: true
+
   liquibase:
     enabled: true
     change-log: classpath:db/changelog-master.yaml

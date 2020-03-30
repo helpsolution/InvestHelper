@@ -15,7 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "user")
+@Table(name = "user", schema = "invest_helper")
 public class User {
 
     @Id
@@ -40,7 +40,7 @@ public class User {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    public static User create(String email, String username, String password) {
+    public static User create(String username, String password, String email) {
         User user = new User();
         user.setEmail(email);
         user.setUsername(username);

@@ -1,7 +1,8 @@
 package com.investhelper.app.web.controller;
 
 import com.investhelper.app.domain.ex.EmailExistsException;
-import com.investhelper.app.domain.ex.UserExistsException;
+
+import com.investhelper.app.domain.ex.UsernameExistsException;
 import com.investhelper.app.domain.service.UserService;
 import com.investhelper.app.web.payload.RegistrationPayload;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ public class RegistrationApiController {
     public ResponseEntity<?> register(@RequestBody @Valid RegistrationPayload payload) {
         try {
             userService.register(payload.toCommand());
-        } catch (UserExistsException ex) {
+        } catch (UsernameExistsException ex) {
             return ResponseEntity.badRequest().body("Username already exists");
         } catch (EmailExistsException ex) {
             return ResponseEntity.badRequest().body("Email already exists");
