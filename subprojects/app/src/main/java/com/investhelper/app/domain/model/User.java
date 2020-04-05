@@ -1,9 +1,6 @@
 package com.investhelper.app.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -15,6 +12,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @Table(name = "user", schema = "invest_helper")
 public class User {
 

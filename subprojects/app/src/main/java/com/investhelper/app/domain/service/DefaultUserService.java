@@ -1,8 +1,10 @@
 package com.investhelper.app.domain.service;
 
 import com.investhelper.app.domain.commands.RegistrationCommand;
+import com.investhelper.app.domain.common.event.DomainEventPublisher;
 import com.investhelper.app.domain.common.mail.MailManager;
 import com.investhelper.app.domain.model.User;
+import com.investhelper.app.domain.model.events.UserRegisteredEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +16,7 @@ public class DefaultUserService implements UserService {
 
     private final RegistrationManager registrationManager;
     private final MailManager mailManager;
+    private final DomainEventPublisher eventPublisher;
 
     @Transactional
     @Override
@@ -25,6 +28,7 @@ public class DefaultUserService implements UserService {
                 command.getPassword(),
                 command.getEmail());
 
+        eventPublisher.publish(new UserRegisteredEvent(registeredUser));
         sendWelcomeMessage(registeredUser);
     }
 
